@@ -71,6 +71,7 @@ public class BallGenerate : MonoBehaviour
     /// </summary>
     public void CreateBall()
     {
+        // iwatabaka
         float pushPower = pachiController.GetSetPushPower;
         float ramdomPower = Random.Range(0.95f, 1.05f);
         Debug.Log(ramdomPower);
