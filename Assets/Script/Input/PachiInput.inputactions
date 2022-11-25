@@ -1,0 +1,33 @@
+{
+    "name": "PachiInput",
+    "maps": [
+        {
+            "name": "inGame",
+            "id": "d3fb6569-7702-4ef1-9ffc-707bf638eea9",
+            "actions": [
+                {
+                    "name": "power",
+                    "type": "Value",
+                    "id": "d0ad1347-ce41-41eb-9c4c-a2d2ba117b8e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "efa1c6c4-01a4-4b3f-bf2f-7133a955b7b2",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "power",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
