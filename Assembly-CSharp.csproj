@@ -64,6 +64,7 @@
     <Compile Include="Assets\Script\PocketArea.cs" />
     <Compile Include="Assets\Script\Input\PachiInput.cs" />
     <Compile Include="Assets\Script\ObjectPool.cs" />
+    <Compile Include="Assets\Script\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Baseball Bats\Documentation\Documentation.txt" />

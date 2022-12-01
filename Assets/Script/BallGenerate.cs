@@ -9,6 +9,7 @@ public class BallGenerate : MonoBehaviour
     private ObjectPool _ObjectPool;
     private Rigidbody _rigidbody;
     private PachiController pachiController;
+    private SoundManager soundManager;
 
     float _countTime = default;
     [SerializeField] private Text _BallCountText;    //玉の数用テキスト
@@ -23,6 +24,8 @@ public class BallGenerate : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         pachiController = GameObject.FindGameObjectWithTag("pachi").GetComponent<PachiController>();
+        soundManager = GameObject.FindGameObjectWithTag("Bgm").GetComponent<SoundManager>();
+
     }
 
     private void Start()
@@ -82,6 +85,8 @@ public class BallGenerate : MonoBehaviour
         //玉に重力と初速を与える
         ball.GetComponent<Rigidbody>().useGravity = true;
         ball.GetComponent<Rigidbody>().AddForce(pushPower * _power * ramdomPower * Vector3.up, ForceMode.Impulse);
+        //玉の打ち出し音を流す
+        soundManager.SEplay(1);
     }
     
     public int GetSetBallCount

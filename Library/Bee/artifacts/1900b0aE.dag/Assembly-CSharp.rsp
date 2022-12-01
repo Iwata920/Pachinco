@@ -340,6 +340,7 @@
 "Assets/Script/ObjectPool.cs"
 "Assets/Script/PachiController.cs"
 "Assets/Script/PocketArea.cs"
+"Assets/Script/SoundManager.cs"
 -langversion:8.0
 
 /deterministic
