@@ -56,15 +56,17 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\BatPush.cs" />
     <Compile Include="Assets\Script\BallPush.cs" />
     <Compile Include="Assets\Script\PachiController.cs" />
+    <Compile Include="Assets\Script\SoundManager.cs" />
     <Compile Include="Assets\Script\BaseBallPush.cs" />
     <Compile Include="Assets\Script\GamePad.cs" />
     <Compile Include="Assets\Script\BallGenerate.cs" />
     <Compile Include="Assets\Script\PocketArea.cs" />
+    <Compile Include="Assets\Script\BallMove.cs" />
     <Compile Include="Assets\Script\Input\PachiInput.cs" />
     <Compile Include="Assets\Script\ObjectPool.cs" />
-    <Compile Include="Assets\Script\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Baseball Bats\Documentation\Documentation.txt" />

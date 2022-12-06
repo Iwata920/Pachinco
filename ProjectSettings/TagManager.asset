@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - pachi
   - Bgm
+  - bat
   layers:
   - Default
   - TransparentFX

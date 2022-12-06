@@ -21,33 +21,13 @@ public class BaseBallPush : MonoBehaviour
 
     private void Update()
     {
-        //スペースを離したら発射
-        if (Input.GetKey(KeyCode.Space))
+        if(!_isPush)
         {
-            //フラグがfalseの時のみ力を加える
-            if (!_isPush)
-            {
-                //ここでフラグをtrueにすることで一度動いた玉を物理演算に任せる
-                _isPush = true;
-                //重力を使えるようにする
-                _rigidbody.useGravity = true;
-                //玉の速度*ボタンを押した長さ*上方向のベクトル
-                _rigidbody.AddForce(_ballSpeed * Vector3.back, ForceMode.Force);
-            }
+            _rigidbody.AddForce(_ballSpeed * Vector3.back, ForceMode.Force);
+            _isPush = true;
         }
+        
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //プールしたオブジェクトを再利用するため
-        //押した長さを初期化
-        _pushTime = 1;
-        //フラグをfalseに
-        _isPush = false;
-        _rigidbody.useGravity = false;
-        //rigidbodyの速度をゼロに
-        _rigidbody.velocity = Vector3.zero;
-        //回転を初期化
-        transform.rotation = Quaternion.Euler(Vector3.zero);
-    }
+   
 }
