@@ -11,7 +11,7 @@ public class BallGenerate : MonoBehaviour
     private PachiController pachiController;
     private SoundManager soundManager;
 
-    float _countTime = default;
+    
     [SerializeField] private Text _BallCountText;    //玉の数用テキスト
 
     [SerializeField] private int _BallMaxCount;      //生成する玉の最大数

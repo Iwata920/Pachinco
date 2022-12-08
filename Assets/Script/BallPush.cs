@@ -6,7 +6,7 @@ public class BallPush : MonoBehaviour
 {
     private Rigidbody _rigidbody;
 
-    private bool _isPush = false;               //‹Ê‚ª‰Ÿ‚³‚ê‚½‚©‚Ç‚¤‚©
+   // private bool _isPush = false;               //‹Ê‚ª‰Ÿ‚³‚ê‚½‚©‚Ç‚¤‚©
 
     string[] CacheJoystickNames;
 
@@ -22,7 +22,7 @@ public class BallPush : MonoBehaviour
         //‰Ÿ‚µ‚½’·‚³‚ğ‰Šú‰»
         //_pushTime = 1;
         //ƒtƒ‰ƒO‚ğfalse‚É
-        _isPush = false;
+        //_isPush = false;
         _rigidbody.useGravity = false;
         //rigidbody‚Ì‘¬“x‚ğƒ[ƒ‚É
         _rigidbody.velocity = Vector3.zero;
