@@ -1,63 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;//必要
+using UnityEngine.Rendering.Universal;//必要;
 
 public class LightEffect : MonoBehaviour
 {
-    
-   // int maxLight = 30;
-   // int minLight = 15;
-    float LightUp = 15;
-
-    
-    Bloom bloom;
+    [SerializeField]
+    Volume m_Volume;
 
     bool isDown = false;
+    private bool isStop;
 
-    // 「using UnityEngine.PostProcessing」の追加を忘れずに
-    void Start()
-    {
-        bloom = ScriptableObject.CreateInstance<Bloom>();
-
-        /*
-        var behaviour = GetComponent<PostProcessProfile>();
-
-        var Settings = behaviour.settings;
-        */
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        bloom.enabled.Override(true);
+        Bloom c;
+        m_Volume.profile.TryGet(out c);
 
-        bloom.intensity.Override((int)LightUp);
-        PostProcessManager.instance.QuickVolume(gameObject.layer, 1, bloom);
-
-        Debug.Log(LightUp);
-
-        if (LightUp < 30 && !isDown)
+        if (!isStop)
         {
-            LightUp += 10 * Time.deltaTime;
-        }
-        else if (isDown)
+            if (c.intensity.value < 7 && !isDown)
+            {
+                c.intensity.value += 2 * Time.deltaTime;
+            }
+            else if (isDown)
+            {
+                c.intensity.value -= 2 * Time.deltaTime;
+            }
+
+            if (c.intensity.value > 7)
+            {
+                isDown = true;
+            }
+            else if (c.intensity.value <= 1.5f)
+            {
+                isDown = false;
+            }
+        } 
+        else
         {
-            LightUp -= 10 * Time.deltaTime;
+            c.intensity.value = 0;
         }
-
-        if (LightUp > 30)
-        {
-            isDown = true;
-        }
-
-        if (LightUp <= 15)
-        {
-            isDown = false;
-        }
-
-        Debug.Log(LightUp);
-
-     
     }      
+
+    public void setBool(bool value)
+    {
+        this.isStop = value;
+    }
 }

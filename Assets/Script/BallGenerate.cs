@@ -8,8 +8,9 @@ public class BallGenerate : MonoBehaviour
 {
     private ObjectPool _ObjectPool;
     private Rigidbody _rigidbody;
-    private PachiController pachiController;
-    private SoundManager soundManager;
+    //private PachiController pachiController;
+    private PachiJoycon pachiJoycon;
+    private SEManager seManager;
 
     
     [SerializeField] private Text _BallCountText;    //玉の数用テキスト
@@ -23,8 +24,9 @@ public class BallGenerate : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        pachiController = GameObject.FindGameObjectWithTag("pachi").GetComponent<PachiController>();
-        soundManager = GameObject.FindGameObjectWithTag("Bgm").GetComponent<SoundManager>();
+        //pachiController = GameObject.FindGameObjectWithTag("pachi").GetComponent<PachiController>();
+        pachiJoycon = GameObject.FindGameObjectWithTag("pachi").GetComponent<PachiJoycon>();
+        seManager = GameObject.FindGameObjectWithTag("SE").GetComponent<SEManager>();
 
     }
 
@@ -47,7 +49,7 @@ public class BallGenerate : MonoBehaviour
         while (!_stop)
         {
             //現在の玉の数にテキストを更新
-            if (_BallMaxCount > 0 && pachiController.GetSetPushPower > 0)
+            if (_BallMaxCount > 0 && pachiJoycon.GetSetPower > 0.1)
             {
                 await Task.Delay(200);
                 //玉を生成し
@@ -74,9 +76,9 @@ public class BallGenerate : MonoBehaviour
     /// </summary>
     public void CreateBall()
     {
-        // iwatabaka
-        float pushPower = pachiController.GetSetPushPower;
-        float ramdomPower = Random.Range(0.95f, 1.05f);
+        
+        float pushPower = pachiJoycon.GetSetPower;
+        float ramdomPower = Random.Range(0.98f, 1.02f);
         Debug.Log(ramdomPower);
         //ボールをプールから取得
         GameObject ball = _ObjectPool.GetObject();
@@ -85,8 +87,9 @@ public class BallGenerate : MonoBehaviour
         //玉に重力と初速を与える
         ball.GetComponent<Rigidbody>().useGravity = true;
         ball.GetComponent<Rigidbody>().AddForce(pushPower * _power * ramdomPower * Vector3.up, ForceMode.Impulse);
+        Debug.Log("打ち出す力" + pushPower * _power * ramdomPower);
         //玉の打ち出し音を流す
-        soundManager.SEplay(1);
+        seManager.SEplay(1);
     }
     
     public int GetSetBallCount

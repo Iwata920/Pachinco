@@ -25,6 +25,14 @@ public class @PachiInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""test"",
+                    ""type"": ""Value"",
+                    ""id"": ""d8a2fd9a-b0a5-40f7-a2c9-4416906261c9"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -38,6 +46,17 @@ public class @PachiInput : IInputActionCollection, IDisposable
                     ""action"": ""power"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a026391e-e118-406b-9b5d-438b2404bbac"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -47,6 +66,7 @@ public class @PachiInput : IInputActionCollection, IDisposable
         // inGame
         m_inGame = asset.FindActionMap("inGame", throwIfNotFound: true);
         m_inGame_power = m_inGame.FindAction("power", throwIfNotFound: true);
+        m_inGame_test = m_inGame.FindAction("test", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -97,11 +117,13 @@ public class @PachiInput : IInputActionCollection, IDisposable
     private readonly InputActionMap m_inGame;
     private IInGameActions m_InGameActionsCallbackInterface;
     private readonly InputAction m_inGame_power;
+    private readonly InputAction m_inGame_test;
     public struct InGameActions
     {
         private @PachiInput m_Wrapper;
         public InGameActions(@PachiInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @power => m_Wrapper.m_inGame_power;
+        public InputAction @test => m_Wrapper.m_inGame_test;
         public InputActionMap Get() { return m_Wrapper.m_inGame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -114,6 +136,9 @@ public class @PachiInput : IInputActionCollection, IDisposable
                 @power.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnPower;
                 @power.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnPower;
                 @power.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnPower;
+                @test.started -= m_Wrapper.m_InGameActionsCallbackInterface.OnTest;
+                @test.performed -= m_Wrapper.m_InGameActionsCallbackInterface.OnTest;
+                @test.canceled -= m_Wrapper.m_InGameActionsCallbackInterface.OnTest;
             }
             m_Wrapper.m_InGameActionsCallbackInterface = instance;
             if (instance != null)
@@ -121,6 +146,9 @@ public class @PachiInput : IInputActionCollection, IDisposable
                 @power.started += instance.OnPower;
                 @power.performed += instance.OnPower;
                 @power.canceled += instance.OnPower;
+                @test.started += instance.OnTest;
+                @test.performed += instance.OnTest;
+                @test.canceled += instance.OnTest;
             }
         }
     }
@@ -128,5 +156,6 @@ public class @PachiInput : IInputActionCollection, IDisposable
     public interface IInGameActions
     {
         void OnPower(InputAction.CallbackContext context);
+        void OnTest(InputAction.CallbackContext context);
     }
 }

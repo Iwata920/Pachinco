@@ -14,7 +14,7 @@ public class MaterialTest : MonoBehaviour
 
     private void Update()
     {
-        a = a + 0.01f;
+        a = a + 0.001f;
 
        
 

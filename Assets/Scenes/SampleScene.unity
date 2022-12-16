@@ -5157,7 +5157,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 991e9d3bd2d813748bf4d9a0d7eb88b5, type: 2}
+  - {fileID: 2100000, guid: f68b2ed1a2ef5e5438a6524348e9f1bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5195,7 +5195,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742889532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.95, y: 18.16, z: 9.119969}
+  m_LocalPosition: {x: 30.95, y: 18.16, z: 9.102}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9385,6 +9385,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8875812985060806204, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d11f4a0249710ca4cb0021ff9f78c8a4, type: 2}
     - target: {fileID: -8679921383154817045, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -9433,6 +9437,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4232096e74786394f869867a430acc46, type: 2}
+    - target: {fileID: -4989550243206290971, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d11f4a0249710ca4cb0021ff9f78c8a4, type: 2}
     - target: {fileID: -3996110647418995180, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -9449,6 +9457,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -650679000888355955, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 338dae383f688ed42820d0ca75c11390, type: 2}
+    - target: {fileID: -650679000888355955, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 338dae383f688ed42820d0ca75c11390, type: 2}
     - target: {fileID: 919132149155446097, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
       propertyPath: m_Name
       value: yakyuuban
@@ -9473,6 +9489,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4232096e74786394f869867a430acc46, type: 2}
+    - target: {fileID: 4913777613711978600, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d11f4a0249710ca4cb0021ff9f78c8a4, type: 2}
+    - target: {fileID: 5363834790359459861, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.418
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019054494679771952, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d11f4a0249710ca4cb0021ff9f78c8a4, type: 2}
     - target: {fileID: 6539254991781085015, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -9481,6 +9509,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4232096e74786394f869867a430acc46, type: 2}
+    - target: {fileID: 9009844060245207015, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d11f4a0249710ca4cb0021ff9f78c8a4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ef55af142ccecb4388359248c5e7e29, type: 3}
 --- !u!1001 &1498466804

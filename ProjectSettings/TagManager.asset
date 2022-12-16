@@ -9,6 +9,11 @@ TagManager:
   - pachi
   - Bgm
   - bat
+  - yakyuu
+  - Atari
+  - FadeIN
+  - FadeOut
+  - SE
   layers:
   - Default
   - TransparentFX
