@@ -26,15 +26,18 @@ public class TitleFade : MonoBehaviour
 
     public IEnumerator StartFadeOut()
     {
+        // タイトル画面のフェイドアウト
         for (int i = 255; i > 0; i--)
         {
             fadeInImage.color = fadeInImage.color + new Color32(0, 0, 0, 1);
             yield return new WaitForSeconds(_fadeSpeed / 2);
         }
 
+        // 警告画面を表示
         TitleObj.SetActive(false);
         DemoObj.SetActive(true);
 
+        // フェイドアウトしメインシーンへ遷移
         for (int i = 255; i > 0; i--)
         {
             fadeInImage.color = fadeInImage.color - new Color32(0, 0, 0, 1);

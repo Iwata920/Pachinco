@@ -79,7 +79,6 @@ public class BallGenerate : MonoBehaviour
         
         float pushPower = pachiJoycon.GetSetPower;
         float ramdomPower = Random.Range(0.98f, 1.02f);
-        Debug.Log(ramdomPower);
         //ボールをプールから取得
         GameObject ball = _ObjectPool.GetObject();
         //玉の位置と回転をセット
@@ -87,7 +86,7 @@ public class BallGenerate : MonoBehaviour
         //玉に重力と初速を与える
         ball.GetComponent<Rigidbody>().useGravity = true;
         ball.GetComponent<Rigidbody>().AddForce(pushPower * _power * ramdomPower * Vector3.up, ForceMode.Impulse);
-        Debug.Log("打ち出す力" + pushPower * _power * ramdomPower);
+        //Debug.Log("打ち出す力" + pushPower * _power * ramdomPower);
         //玉の打ち出し音を流す
         seManager.SEplay(1);
     }

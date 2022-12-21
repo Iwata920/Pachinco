@@ -38,10 +38,14 @@ public class PachiJoycon : MonoBehaviour
     {
         if (_isStop)
         {
-            _pushPower = Mathf.Clamp01((Quaternion.ToEulerAngles(joycon.GetVector()).y / Mathf.PI * 180 * (-1) + 180) / 180);
+            _pushPower = (Quaternion.ToEulerAngles(joycon.GetVector()).y / Mathf.PI * 180 * (-1) + 180) / 180;
+            if(_pushPower > 1)
+            {
+                _pushPower = 1;
+            }
         }
         
-        //Debug.Log(_pushPower);
+        Debug.Log(_pushPower);
     }
 
     public float GetSetPower

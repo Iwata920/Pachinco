@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class SEManager : MonoBehaviour
 {
     [SerializeField]
@@ -17,15 +19,22 @@ public class SEManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        switch (SceneManager.GetActiveScene().name)
         {
-            SEplay(0);
+            case "TitleScene":
+                break;
+            case "Main":
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    SEplay(0);
+                }
+                break;
         }
+        
     }
 
     public void SEplay(int number)
     {
         SEaudioSource.PlayOneShot(audioClips[number]);
     }
-
 }

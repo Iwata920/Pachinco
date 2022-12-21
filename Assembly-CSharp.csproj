@@ -56,11 +56,16 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\RandomCreate.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\RendererSortingOrder.cs" />
+    <Compile Include="Assets\Script\bat.cs" />
     <Compile Include="Assets\Script\BatPush.cs" />
     <Compile Include="Assets\Script\BallPush.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\Ultimate VFX\Expansions\XP - STORM\Scripts\StormVFXTerrainDemoFollowTargetPosition.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\ParticleManager.cs" />
+    <Compile Include="Assets\Script\CurveBool.cs" />
+    <Compile Include="Assets\Script\SliderBool.cs" />
+    <Compile Include="Assets\Script\test.cs" />
     <Compile Include="Assets\Script\LightEffect.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Force Fields\Scripts (DEMO ONLY)\ParticleForceFieldsDemo_CameraRig.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Flocking\ParticleFlocking.cs" />
@@ -82,7 +87,6 @@
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Plexus\Scripts (DEMO ONLY)\ParticlePlexusDemo_CameraRig.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\DestroyOnParticlesDead.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\CameraShake.cs" />
-    <Compile Include="Assets\Script\GamePad.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\RewindParticleSystemSimple.cs" />
     <Compile Include="Assets\Script\BallMove.cs" />
     <Compile Include="Assets\JoyconLib_scripts\Joycon.cs" />
@@ -91,6 +95,7 @@
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\DestroyAfterTime.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\Rotator.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Force Fields\Scripts\TurbulenceParticleForceField.cs" />
+    <Compile Include="Assets\Script\accel.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Affectors\Scripts\Noise.cs" />
     <Compile Include="Assets\Asset\naichilab\FadeManager\Sample\FadeSample.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\TransformNoise.cs" />
@@ -103,8 +108,10 @@
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Force Fields\Scripts\Noise2.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\TrailRenderers.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSDisplay.cs" />
+    <Compile Include="Assets\Script\BreakingBall.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Force Fields\Scripts\VortexParticleForceField.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\Billboard.cs" />
+    <Compile Include="Assets\Script\BgmManager.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Shaders\_Common\MirzaPostProcessing.cs" />
     <Compile Include="Assets\Script\PocketArea.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\Ultimate VFX\Expansions\XP - TITLES\Scripts\DemoManager_XPTitles.cs" />
@@ -118,11 +125,13 @@
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\ParticleSystems.cs" />
     <Compile Include="Assets\Script\FadeIn.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Force Fields\Scripts\ParticleForceField.cs" />
+    <Compile Include="Assets\Script\Atarime.cs" />
     <Compile Include="Assets\Script\Input\PachiInput.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
     <Compile Include="Assets\Script\ObjectPool.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Plexus\Scripts\ParticlePlexus.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Scripting\Effects\Particle Affectors\Scripts\AttractionParticleAffector.cs" />
+    <Compile Include="Assets\Script\Bound.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Shaders\Image Effects\Resources\Sharpen\Sharpen.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
     <Compile Include="Assets\Asset\Mirza Beig\Particle Systems\_Common\Scripts\ParticleSystemTimeRemap.cs" />

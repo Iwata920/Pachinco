@@ -4,39 +4,43 @@ using UnityEngine;
 
 public class BallMove : MonoBehaviour
 {
-    [SerializeField] private float _xMove;
-    [SerializeField] private float _yMove;
-    [SerializeField] private float _zMove;
-     
+     private float _xMove;
+     private float _zMove;
+
+    private float _xSpeed;
+    private float _zSpeed;
+
+    Rigidbody rigidbody;
 
     Vector3 pos;
     [SerializeField] GameObject plane;
     float _yPos;
 
     private bool _isHit;
+    [SerializeField]
     float speed = 2;
     
 
     private void Start()
     {
-        _yPos = plane.transform.position.y;
-        this.transform.position = new Vector3(transform.position.x, _yPos + this.transform.localScale.y , transform.position.z);
+        rigidbody = GetComponent<Rigidbody>();
+        //_yPos = plane.transform.position.y;
+        //this.transform.position = new Vector3(transform.position.x, _yPos + this.transform.localScale.y , transform.position.z);
     }
 
 
     private void Update()
     {
-        this.transform.position += new Vector3(_xMove, 0, _zMove) * Time.deltaTime * speed;
-        /*
-        if (!_isHit) {
-            Vector3 velocity = gameObject.transform.rotation * new Vector3(-1, 0,0);
-            gameObject.transform.position += velocity * Time.deltaTime * 3;
-            //transform.Translate(0, 0, -0.05f);
-        } else {
-            Vector3 velocity = gameObject.transform.rotation * new Vector3(_xMove, 0 , _yMove);
-            gameObject.transform.position += velocity * Time.deltaTime * 3;
-            //transform.Translate(pos.x / 10000, 0, pos.z / 10000);
-        }*/
+        //if(_isHit)
+        //{
+        //    _xSpeed = _xMove * Time.deltaTime * speed;
+        //    _zSpeed = _zMove * Time.deltaTime * speed;
+        //    Debug.Log("縦のスピード" + _xSpeed);
+        //    Debug.Log("横のスピード" + _zSpeed);
+        //    //this.transform.position += new Vector3(_xMove, 0, _zMove) * Time.deltaTime * speed;
+        //    rigidbody.AddForce(_xSpeed, 0f, _zSpeed) ;
+        //    _isHit = false;
+        //}
        
     }
 
@@ -44,6 +48,8 @@ public class BallMove : MonoBehaviour
     {
         if(collision.gameObject.tag == "bat")
         {
+            //rigidbody.isKinematic = true;
+     
             GameObject バット = collision.gameObject;
 
             float バットの角度 = バット.transform.eulerAngles.y;
@@ -58,25 +64,14 @@ public class BallMove : MonoBehaviour
 
             _xMove = x;
             _zMove = -y;
-
-
-            /*
-            pos = collision.transform.eulerAngles;
-            Quaternion quaternion = collision.gameObject.transform.rotation;
-            //Debug.Log(pos);
-            //Debug.Log(quaternion);
-            _xMove = quaternion.x;
-            _yMove = quaternion.y;
-            _zMove = quaternion.z;
             _isHit = true;
 
-
-            // オイラー角からQuaternionを作成する
-            Quaternion q = Quaternion.Euler(pos.x, pos.y, pos.z);
-            Debug.Log(q);
-            // Quaternionからオイラー角を作成する
-            Vector3 eulerAngles = quaternion.eulerAngles;
-            */
+            _xSpeed = _xMove * speed;
+            _zSpeed = _zMove * speed;
+            Debug.Log("縦のスピード" + _xSpeed);
+            Debug.Log("横のスピード" + _zSpeed);
+            //this.transform.position += new Vector3(_xMove, 0, _zMove) * Time.deltaTime * speed;
+            rigidbody.AddForce(_xSpeed, 0f, _zSpeed);
         }
     }
 }

@@ -12,7 +12,8 @@ public class FadeIn : MonoBehaviour
     [SerializeField] GameObject title;
     [SerializeField] GameObject camera;
     [SerializeField] GameObject text;
-
+    SEManager seManager;
+    BgmManager bgmManager; 
 
 
     void Start()
@@ -22,12 +23,17 @@ public class FadeIn : MonoBehaviour
         StartCoroutine("Transparent");
         titleFade = title.GetComponent<TitleFade>();
         lightEffect = camera.GetComponent<LightEffect>();
+        seManager = GameObject.FindGameObjectWithTag("SE").GetComponent<SEManager>();
+        bgmManager = GameObject.FindGameObjectWithTag("Bgm").GetComponent<BgmManager>();
     }
 
     private void Update()
     {
+        // タイトルのアニメーションが終わったらボタンを有効化
         if(_isTransition && Input.anyKey)
         {
+            seManager.SEplay(0);
+            bgmManager.StopBgm();
             lightEffect.setBool(true);
             titleFade.StartCoroutine("StartFadeOut");
             _isTransition = false;
